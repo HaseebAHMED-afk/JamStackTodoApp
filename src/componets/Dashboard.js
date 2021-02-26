@@ -1,7 +1,6 @@
 import React , {useState , useContext} from 'react'
 import { IdentityContext } from '../../identity-context'
 import Nav from './Nav'
-import TextField from '@material-ui/core/TextField'
 import '../style.css'
 import Button from '@material-ui/core/Button'
 
@@ -21,6 +20,12 @@ const Dashboard = () => {
         <input type='text' className='input' placeholder="What's the plan today????" value={text} onChange={(e) => {setText(e.target.value)}} />
         <Button variant='contained' color='primary' >Add</Button>
         </div>
+        <ul>
+            <li className='task' ><span className='task-text' >A task</span><span className='delete-btn'>kachra</span></li>
+            <li className='task' ><span className='task-text' >A task</span><span className='delete-btn'>kachra</span></li>
+            <li className='task' ><span className='task-text' >A task</span><span className='delete-btn'>kachra</span></li>
+
+        </ul>
         </div>
     )
 }
