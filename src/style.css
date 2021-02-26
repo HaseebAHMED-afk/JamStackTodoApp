@@ -1,0 +1,14 @@
+body{
+    background-color: black;
+    color: white;
+}
+.app{
+    width: 60%;
+    margin: auto;
+}
+.main-heading{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.login-btn{
+    width: 100%;
+}
