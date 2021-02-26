@@ -9,6 +9,14 @@ body{
 .main-heading{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+.user{
+    display: flex;
+    align-items: center;
+}
+.username{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 25px;
+}
 .login-btn{
     width: 100%;
 }
