@@ -1,0 +1,11 @@
+type Todo{
+    title: String!
+    done: Boolean
+    user: String!
+}
+
+type Query{
+    allTodos: [Todo]
+    todosDone(done: Boolean!) : [Todo!]
+    getTodosByUser(user: String!) : [Todo!]
+}
