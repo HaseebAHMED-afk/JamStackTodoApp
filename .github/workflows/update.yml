@@ -34,7 +34,7 @@ jobs:
     - name: Build the site
       run: npm run build
       env:
-          FAUNADB_SECRET_KEY: ${{secrets.FAUNADB_SECRET}}
+          FAUNADB_SECRET: ${{secrets.FAUNADB_SECRET}}
 
     - name: Deploy to Netlify
       uses: nwtgck/actions-netlify@v1.1.3
