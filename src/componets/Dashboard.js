@@ -9,10 +9,12 @@ import { gql, useQuery } from "@apollo/client"
 const GET_TODOS = gql`
   query($user: String!) {
     getTodosByUser(user: $user) {
-      _id
-      title
-      done
-      user
+      data {
+        _id
+        title
+        done
+        user
+      }
     }
   }
 `
@@ -29,8 +31,6 @@ const Dashboard = () => {
       user: userName,
     },
   })
-
-  console.log(data);
 
   return (
     <div className="app">
@@ -67,22 +67,26 @@ const Dashboard = () => {
       <ul>
         {data &&
           data.getTodosByUser.data.map((task, i) => {
-            return (<li
-              onClick={async e => {
-                e.preventDefault()
-                await axios.delete("/.netlify/functions/deleteTodo", {
-                  data: {
-                    id: task._id,
-                  },
-                })
-                refetch()
-              }}
-              className="task"
-              key={i}
-            >
-              <span className="task-text">{task.title}</span>
-              <span className="delete-btn">❌</span>
-            </li>)
+            return (
+              <li className="task" key={i}>
+                <span className="task-text">{task.title}</span>
+                <Button
+                  color="secondary"
+                  variant="contained"
+                  onClick={async e => {
+                    e.preventDefault()
+                    await axios.delete("/.netlify/functions/deleteTodo", {
+                      data: {
+                        id: task._id,
+                      },
+                    })
+                    refetch()
+                  }}
+                >
+                  Done
+                </Button>
+              </li>
+            )
           })}
       </ul>
     </div>

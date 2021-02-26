@@ -6,7 +6,7 @@ exports.handler = async (event) => {
     
 
 const GET_TODOS = `
-query($user: String){
+query($user: String!){
     getTodosByUser(user : $user){
       data{
         _id
