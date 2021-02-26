@@ -6,5 +6,17 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [{
+    resolve: `gatsby-plugin-create-client-paths`,
+    options:{
+      prefixes: [`/app/*`]
+    }
+  },
+  {
+    resolve: `gatsby-plugin-apollo`,
+    options:{
+      uri: `/.netlify/functions/getTodos`
+    }
+  }
+],
 }
