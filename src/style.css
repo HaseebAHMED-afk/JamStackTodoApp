@@ -33,3 +33,21 @@ body{
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+.input-area{
+    width: 100%;
+}
+.input{
+    border: 1px solid white ;
+    margin: 5px;
+    height: 30px;
+    width: 90%;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 3px;
+}
+
+.input:focus{
+    outline-style: none;
+}

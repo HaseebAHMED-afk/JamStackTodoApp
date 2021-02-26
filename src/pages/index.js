@@ -8,7 +8,7 @@ export default function Home() {
 
   const { user , identity: netlifyIdentity } = useContext(IdentityContext)
 
-  return <div className="app" >
+  return (<div className="app" >
     <Nav />
     <div className="user" >
     <h1 className="main-heading" >
@@ -16,8 +16,11 @@ export default function Home() {
     </h1>
       <p className='username' >Welcome {user && user.user_metadata.full_name.toUpperCase()} </p>
     </div>
-    <Button onClick={()=>{
-      netlifyIdentity.open();
-    }} variant='contained' color='primary' className='login-btn'  >Log In</Button>
-  </div>
+    {
+      user ? null : (<Button onClick={()=>{
+        netlifyIdentity.open();
+      }} variant='contained' color='primary' className='login-btn'  >Log In</Button>)
+    }
+    
+  </div>)
 }
