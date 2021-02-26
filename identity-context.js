@@ -6,7 +6,7 @@ const IdentityContext = React.createContext({});
 exports.IdentityContext = IdentityContext;
 
 const IdentityProvider = ({children}) => {
-    const [user,setUser] = React.useState();
+    const [user,setUser] = React.useState('');
 
     React.useEffect(() => {
         netlifyIdentitiy.init({});
@@ -24,7 +24,7 @@ const IdentityProvider = ({children}) => {
 
 
     return (
-        <IdentityContext.Provider value={{netlifyIdentitiy , user}} >
+        <IdentityContext.Provider value={{identity: netlifyIdentitiy , user}} >
             {children}
         </IdentityContext.Provider>
     )
